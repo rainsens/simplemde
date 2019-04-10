@@ -1,14 +1,14 @@
 {
-    "name": "laravel-admin-ext/simplemde",
+    "name": "laravel-admin-ext/simplemde-img",
     "description": "Simplemde markdown editor extension for laravel-admin",
     "type": "library",
     "keywords": ["laravel-admin", "extension", "markdown", "editor"],
-    "homepage": "https://github.com/laravel-admin-ext/simplemde",
+    "homepage": "https://github.com/laravel-admin-ext/simplemde-img",
     "license": "MIT",
     "authors": [
         {
-            "name": "song",
-            "email": "zosong@126.com"
+            "name": "Rainsen",
+            "email": "yusen@rainsen.com"
         }
     ],
     "require": {

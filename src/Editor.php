@@ -23,12 +23,15 @@ class Editor extends Field
      */
     protected static $js = [
         'vendor/laravel-admin-ext/simplemde/dist/simplemde.min.js',
+	    'vendor/laravel-admin-ext/simplemde/dist/codemirror-4.inline-attachment.min.js'
     ];
 
     /**
      * @var int
      */
     protected $height = 300;
+    
+    protected $upload_url = '/markdown/upload';
 
     /**
      * @param int $height
@@ -60,12 +63,20 @@ class Editor extends Field
         $varName = 'simplemde_'.uniqid();
 
         $this->script = <<<EOT
+        
+var inlineAttachmentConfig = {
+    uploadUrl: '$this->upload_url',
+    uploadFieldName: 'file',
+    
+};
 
 var options = {element: $("#{$this->id}")[0]};
 
 Object.assign(options, {$config});
 
 var $varName = new SimpleMDE(options);
+
+inlineAttachment.editors.codemirror4.attach($varName.codemirror, inlineAttachmentConfig);
 
 $varName.codemirror.on("change", function(){
 	var html = $varName.value();
