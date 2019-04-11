@@ -23,6 +23,7 @@ class Editor extends Field
      */
     protected static $js = [
         'vendor/laravel-admin-ext/simplemde/dist/simplemde.min.js',
+	    'vendor/laravel-admin-ext/simplemde/dist/inline-attachment.min.js',
 	    'vendor/laravel-admin-ext/simplemde/dist/codemirror-4.inline-attachment.min.js'
     ];
 
@@ -30,8 +31,6 @@ class Editor extends Field
      * @var int
      */
     protected $height = 300;
-    
-    protected $upload_url = '/markdown/upload';
 
     /**
      * @param int $height
@@ -62,12 +61,17 @@ class Editor extends Field
 
         $varName = 'simplemde_'.uniqid();
 
+        $uploadUrl = '/admin/'.trim(Simplemde::config('upload_url'), '/');
+        
         $this->script = <<<EOT
         
 var inlineAttachmentConfig = {
-    uploadUrl: '$this->upload_url',
-    uploadFieldName: 'file',
-    
+    uploadUrl: '$uploadUrl',
+    uploadFieldName: 'img',
+    urlText: "![file]({filename})",
+    extraParams: {
+        '_token': $('input[name="_token"]').val()
+    }
 };
 
 var options = {element: $("#{$this->id}")[0]};

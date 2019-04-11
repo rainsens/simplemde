@@ -7,7 +7,8 @@
         @include('admin::form.error')
 
         <textarea id="{{$id}}">{!! old($column, $value) !!}</textarea>
-
+        
+        {{ csrf_field() }}
         <input type="hidden" name="{{$name}}" value="{{ old($column, $value) }}"/>
 
         @include('admin::form.help-block')

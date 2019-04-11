@@ -1,4 +1,4 @@
-Simplemde editor extension for laravel-admin
+Simplemde enhanced editor extension for laravel-admin which supports uploading image.
 ======
 
 [Simplemde](https://github.com/sparksuite/simplemde-markdown-editor) is a great markdown editor, this extension is used to integrate `Simplemde` into the `laravel-admin` form.
@@ -11,11 +11,13 @@ Simplemde editor extension for laravel-admin
 
 ```bash
 composer require laravel-admin-ext/simplemde
+composer require intervention/image
 ```
 
 Then
 ```bash
 php artisan vendor:publish --tag=laravel-admin-simplemde
+php artisan storage:link
 ```
 
 ## Configuration
@@ -29,6 +31,9 @@ In the `extensions` section of the `config/admin.php` file, add some configurati
         
             // Set to false if you want to disable this extension
             'enable' => true,
+            
+            // Set upload url for attachment
+            'upload_url' => 'attachments/upload',
             
             // If you want to set an alias for the calling method
             //'alias' => 'markdown',
@@ -67,14 +72,6 @@ If the method alias is specified in the configuration as `markdown`
 ```php
 $form->markdown('content');
 ```
-
-## Donate
-
-> Help keeping the project development going, by donating a little. Thanks in advance.
-
-[![PayPal Me](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/zousong)
-
-![-1](https://cloud.githubusercontent.com/assets/1479100/23287423/45c68202-fa78-11e6-8125-3e365101a313.jpg)
 
 License
 ------------

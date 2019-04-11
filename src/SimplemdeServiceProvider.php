@@ -27,6 +27,10 @@ class SimplemdeServiceProvider extends ServiceProvider
                 'laravel-admin-simplemde'
             );
         }
+	
+	    $this->app->booted(function () {
+		    Simplemde::routes(__DIR__.'/../routes/web.php');
+	    });
 
         Admin::booting(function () {
             Form::extend('simplemde', Editor::class);
@@ -35,7 +39,7 @@ class SimplemdeServiceProvider extends ServiceProvider
                 Form::alias('simplemde', $alias);
             }
         });
-
+        
         Admin::booted(function () {
             if (Simplemde::config('config.renderingConfig.codeSyntaxHighlighting')) {
                 Admin::css('//cdn.jsdelivr.net/highlight.js/latest/styles/github.min.css');
