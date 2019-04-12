@@ -10,7 +10,7 @@ Simplemde enhanced editor extension for laravel-admin which supports uploading i
 ## Installation
 
 ```bash
-composer require laravel-admin-ext/simplemde
+composer require rainsens/simplemde
 composer require intervention/image
 ```
 
