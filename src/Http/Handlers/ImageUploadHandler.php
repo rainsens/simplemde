@@ -1,5 +1,5 @@
 <?php
-namespace Encore\Simplemde\Handlers;
+namespace Rainsens\Simplemde\Handlers;
 
 use Image;
 use Storage;

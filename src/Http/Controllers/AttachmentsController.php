@@ -1,10 +1,10 @@
 <?php
-namespace Encore\Simplemde\Http\Controllers;
+namespace Rainsens\Simplemde\Http\Controllers;
 
 use Response;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Encore\Simplemde\Handlers\ImageUploadHandler;
+use Rainsens\Simplemde\Handlers\ImageUploadHandler;
 
 class AttachmentsController extends Controller
 {

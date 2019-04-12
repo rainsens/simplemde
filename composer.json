@@ -1,9 +1,9 @@
 {
-    "name": "rainsens/simplemde-img",
-    "description": "Simplemde markdown editor extension for laravel-admin",
+    "name": "rainsens/simplemde",
+    "description": "Simplemde markdown editor extension for laravel-admin which supports uploading image",
     "type": "library",
     "keywords": ["laravel-admin", "extension", "markdown", "editor"],
-    "homepage": "https://github.com/laravel-admin-ext/simplemde-img",
+    "homepage": "https://github.com/rainsens/simplemde",
     "license": "MIT",
     "authors": [
         {
@@ -20,13 +20,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Encore\\Simplemde\\": "src/"
+            "Rainsens\\Simplemde\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Encore\\Simplemde\\SimplemdeServiceProvider"
+                "Rainsens\\Simplemde\\SimplemdeServiceProvider"
             ]
 
         }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Simplemde;
+namespace Rainsens\Simplemde;
 
 use Encore\Admin\Extension;
 
